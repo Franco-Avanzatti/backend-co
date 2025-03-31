@@ -17,9 +17,59 @@ Este proyecto es un e-commerce de venta de productos de tecnología. Se desarrol
 2. Instalar las dependencias con `npm install`
 3. Iniciar el servidor con `npm run dev`
 
------
+----------------------------------------------------------------------------------------
 Entrega Final:
 TESTEO:
+
+1. Registro de usuarios (POST /api/sessions/register)
+Descripción: Registra un nuevo usuario en la base de datos. La contraseña se encripta automáticamente utilizando bcrypt.
+Body (JSON):
+{
+  "first_name": "Juan",
+  "last_name": "Pérez",
+  "email": "juan.perez@example.com",
+  "age": 30,
+  "password": "password123",
+  "role": "user"
+}
+respuesta esperada:
+{
+  "status": "ok",
+  "user": {
+    "_id": "id_del_usuario",
+    "first_name": "Juan",
+    "last_name": "Pérez",
+    "email": "juan.perez@example.com",
+    "age": 30,
+    "password": "hashed_password",
+    "role": "user",
+    "__v": 0
+  }
+}
+
+2-  Login de usuarios (POST /api/sessions/login)
+Descripción: Permite a un usuario loguearse. Si las credenciales son correctas, genera un token JWT y lo almacena en una cookie HTTP-only.
+Body (JSON)
+{
+  "email": "juan.perez@example.com",
+  "password": "password123"
+}
+RESPUESTA ESPERADA: 
+{
+  "status": "ok",
+  "message": "Login exitoso"
+}
+
+Nota: Verifica que se haya creado una cookie llamada jwt.
+
+
+3. Obtener el usuario actual (GET /api/sessions/current)
+Descripción: Devuelve los datos del usuario actual basado en el token JWT almacenado en la cookie.
+Headers: La cookie jwt debe estar presente.
+Descripción: Devuelve los datos del usuario actual basado en el token JWT almacenado en la cookie.
+Headers: La cookie jwt debe estar presente.
+Respuesta esperada:
+
 {
   "status": "ok",
   "user": {
