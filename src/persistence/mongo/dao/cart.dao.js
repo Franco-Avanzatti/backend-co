@@ -1,4 +1,3 @@
-//Backend-co\src\persistence\mongo\dao\cart.dao.js
 import { cartModel } from "../models/cart.model.js";
 
 

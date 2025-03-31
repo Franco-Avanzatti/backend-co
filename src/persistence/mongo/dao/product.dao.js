@@ -1,4 +1,3 @@
-//Backend-co\src\persistence\mongo\dao\product.dao.js
 import { productModel } from "../models/product.model.js";
 
 class ProductDao {

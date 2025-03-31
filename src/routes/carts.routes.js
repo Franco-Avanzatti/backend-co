@@ -1,4 +1,3 @@
-//Backend-co\src\routes\carts.routes.js
 import { Router } from "express";
 import { cartDao } from "../persistence/mongo/dao/cart.dao.js";
 

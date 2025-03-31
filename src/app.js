@@ -1,4 +1,3 @@
-//Backend-co\src\app.js
 import express from "express";
 import { connectMongoDB } from "./config/mongoDB.config.js";
 import routes from "./routes/index.js";
@@ -7,6 +6,7 @@ import session from "express-session";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
+
 const app = express();
 
 connectMongoDB();

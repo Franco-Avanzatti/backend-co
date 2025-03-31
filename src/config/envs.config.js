@@ -1,4 +1,3 @@
-//Backend-co\src\config\envs.config.js
 import dotenv from "dotenv";
 
 dotenv.config();

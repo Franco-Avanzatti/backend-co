@@ -1,4 +1,3 @@
-//Backend-co\src\persistence\mongo\models\User.models.js
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 

@@ -1,4 +1,3 @@
-//Backend-co\src\dirname.js
 import {fileURLToPath} from 'url';
 import { dirname } from 'path';
 

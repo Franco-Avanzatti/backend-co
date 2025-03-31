@@ -1,4 +1,3 @@
-//Backend-co\src\config\mongoDB.config.js
 import mongoose from "mongoose";
 import envsConfig from "./envs.config.js";
 
