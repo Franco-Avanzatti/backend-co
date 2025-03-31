@@ -1,3 +1,4 @@
+//Backend-co\src\persistence\mongo\models\User.models.js
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({

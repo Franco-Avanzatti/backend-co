@@ -1,5 +1,5 @@
-import { productModel } from "../models/User.models.js";
-
+//Backend-co\src\persistence\mongo\dao\product.dao.js
+import { productModel } from "../models/product.model.js";
 
 class ProductDao {
   async getAll(query, options) {
@@ -23,7 +23,7 @@ class ProductDao {
   }
 
   async deleteOne(id) {
-    const product = await productModel.findByIdAndUpdate(id, { status: false }, { new: true });
+    const product = await productModel.findByIdAndDelete(id);
     return product;
   }
 }

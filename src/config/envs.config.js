@@ -1,7 +1,13 @@
+//Backend-co\src\config\envs.config.js
+import dotenv from "dotenv";
 
-export default {
-    PORT: process.env.PORT || 4000,
-    MONGO_URL: process.env.MONGO_URL || 'mongodb://localhost/e-commerce',
-    SESSION_SECRET: process.env.SESSION_SECRET || "secret",
-    JWT_SECRET: process.env.JWT_SECRET || "secret"
-  }
+dotenv.config();
+
+const envsConfig = {
+  PORT: process.env.PORT || 4000,
+  MONGO_URL: process.env.MONGO_URI,
+  SESSION_SECRET: process.env.SESSION_SECRET,
+  JWT_SECRET: process.env.JWT_SECRET,
+};
+
+export default envsConfig;

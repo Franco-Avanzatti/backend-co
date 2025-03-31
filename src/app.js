@@ -1,11 +1,12 @@
+//Backend-co\src\app.js
 import express from "express";
 import { connectMongoDB } from "./config/mongoDB.config.js";
 import routes from "./routes/index.js";
 import envsConfig from "./config/envs.config.js";
 import session from "express-session";
 import cookieParser from "cookie-parser";
-import passport from "./config/passport.config.js";
-
+import passport from "passport";
+import initializePassport from "./config/passport.config.js";
 const app = express();
 
 connectMongoDB();
@@ -28,6 +29,7 @@ app.use(
 app.use(cookieParser());
 
 // Inicializar las estrategias de passport
+initializePassport();
 app.use(passport.initialize());
 
 // Rutas de la api

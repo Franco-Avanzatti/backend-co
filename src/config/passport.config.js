@@ -1,6 +1,8 @@
+//Backend-co\src\config\passport.config.js
 import passport from 'passport';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
-import User from '../models/User.model.js';
+//import User from '../models/User.model.js';
+import User from '../persistence/mongo/models/User.models.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
