@@ -26,22 +26,6 @@ passport.use(
   })
 );
 
-// Estrategia 'current' para obtener el usuario desde el token
-passport.use(
-  "current",
-  new JwtStrategy(opts, async (jwt_payload, done) => {
-    try {
-      const user = await User.findById(jwt_payload.id);
-      if (user) {
-        return done(null, user); // Usuario encontrado
-      }
-      return done(null, false); // Usuario no encontrado
-    } catch (error) {
-      return done(error, false); // Error en la validación
-    }
-  })
-);
-
 export default function initializePassport() {
   passport.initialize();
 }
